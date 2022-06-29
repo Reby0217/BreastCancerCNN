@@ -1,5 +1,0 @@
-1、降维问题的影响及改进
-2、7个test acc下降
-3、softmax换掉logistics regression, xgboost, random forest
-4、LRreduce函数--early stop
-5、按照vgg16的方式改其余model
