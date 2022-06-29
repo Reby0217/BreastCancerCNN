@@ -1,6 +1,6 @@
 import os
 import numpy as np
-
+import glob
 import matplotlib.image as mpimg
 from skimage.transform import resize
 from keras.layers import *
@@ -93,3 +93,5 @@ def data_split(magnification='40X', validation_percent=0.15, testing_percent=0.1
     print(training_images.shape[0], validation_images.shape[0], testing_images.shape[0])
 
     return training_images, training_labels, validation_images, validation_labels, testing_images, testing_labels
+
+
