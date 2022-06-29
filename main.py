@@ -131,7 +131,7 @@ def xception_model(load_weights=True):
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(classes, activation='softmax')(x)
+    x = Dense(num_classes, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model.name = 'xception'
 
@@ -146,7 +146,7 @@ def vgg16_model(load_weights=True):
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(4, activation='softmax')(x)
+    x = Dense(num_classes, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model._name = 'vgg16'
 
@@ -165,7 +165,7 @@ def vgg19_model(load_weights=True):
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(4, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
+    x = Dense(num_classes, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model._name = 'vgg19'
     return model
@@ -179,7 +179,7 @@ def resnet50_model(load_weights=True):
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(4, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
+    x = Dense(num_classes, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model.name = 'resnet'
     return model
@@ -193,7 +193,7 @@ def inception_model(load_weights=True):
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(4, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
+    x = Dense(num_classes, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model.name = 'inception'
     return model
