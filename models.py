@@ -488,7 +488,8 @@ def inception_model(image_height, image_width, n_channels, load_wt="Yes"):
 
 
 def inception_resnet_model(image_height, image_width, n_channels, load_wt="Yes"):
-    BASE_WEIGHT_URL = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.7/'
+    BASE_WEIGHT_URL = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.7/inception_resnet_v2_weights_tf_dim_ordering_tf_kernels.h5'
+    # original ULR: 404 error
     weights_filename = 'inception_resnet_v2_weights_tf_dim_ordering_tf_kernels_notop.h5'
     weights_path = get_file(weights_filename, BASE_WEIGHT_URL + weights_filename, cache_subdir='models',
                             md5_hash='d19885ff4a710c122648d3b5c3b684e4')
