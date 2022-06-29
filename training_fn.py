@@ -58,7 +58,7 @@ def compile_n_fit(validation_percent, testing_percent, image_height, image_width
         print('No weights defined!')
         pass
 
-    model.compile(loss="categorical_crossentropy", optimizer=Adam(lr=0.0001), metrics=[f1, 'accuracy'])
+    model.compile(loss="categorical_crossentropy", optimizer=Adam(learning_rate=0.0001), metrics=[f1, 'accuracy'])
     early_stopping = EarlyStopping(patience=10, verbose=2)
     model_checkpoint = ModelCheckpoint(model_name + "_combine" + ".model", save_best_only=True, verbose=2)
     reduce_lr = ReduceLROnPlateau(factor=0.1, patience=5, verbose=2)  # min_lr=0.00001,
