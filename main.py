@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import random
 import os
+import glob
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from skimage.transform import resize
@@ -74,10 +75,14 @@ def data_split(magnification='40X', validation_percent=0.15, testing_percent=0.1
             training_size = total_images - (validation_size + testing_size)
             print(training_size, validation_size, testing_size, total_images)
             num = 0
+
             for names in filenames:
                 num += 1
-                filepath = os.path.join(root, names)
-                print(filepath)
+                if not names.startswith('.'):
+                    filepath = os.path.join(root, names)
+                    print(filepath)
+                else:
+                    continue
                 image = mpimg.imread(filepath)
                 image_resize = resize(image, (115, 175), mode='constant')
                 if num in range(training_size):
@@ -151,16 +156,16 @@ def vgg16_model(load_weights=True):
 def vgg19_model(load_weights=True):
     if load_weights:
         base_model = VGG19(include_top=False, weights='imagenet', input_tensor=None,
-                           input_shape=(image_width, image_height, 3), pooling='max')
+                           input_shape=(image_height, image_width, 3), pooling='max')  # change from input_shape=(image_width, image_height,3)
     else:
         base_model = VGG19(include_top=False, weights=None, input_tensor=None,
-                           input_shape=(image_width, image_height, 3), pooling='max')
+                           input_shape=(image_height, image_width, 3), pooling='max')  # change from input_shape=(image_width, image_height,3)
     x = base_model.output
     x = Dense(1024, activation='relu')(x)
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(8, activation='softmax')(x)
+    x = Dense(4, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model._name = 'vgg19'
     return model
@@ -168,13 +173,13 @@ def vgg19_model(load_weights=True):
 
 def resnet50_model(load_weights=True):
     base_model = ResNet50(include_top=False, weights='imagenet', input_tensor=None,
-                          input_shape=(image_width, image_height, 3), pooling='avg')
+                          input_shape=(image_height, image_width, 3), pooling='avg')  # change from input_shape=(image_width, image_height,3)
     x = base_model.output
     x = Dense(1024, activation='relu')(x)
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(8, activation='softmax')(x)
+    x = Dense(4, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model.name = 'resnet'
     return model
@@ -182,13 +187,13 @@ def resnet50_model(load_weights=True):
 
 def inception_model(load_weights=True):
     base_model = InceptionV3(include_top=False, weights='imagenet', input_tensor=None,
-                             input_shape=(image_width, image_height, 3), pooling='avg')
+                             input_shape=(image_height, image_width, 3), pooling='avg') # change from input_shape=(image_width, image_height,3)
     x = base_model.output
     x = Dense(1024, activation='relu')(x)
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(8, activation='softmax')(x)
+    x = Dense(4, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model.name = 'inception'
     return model
@@ -196,13 +201,13 @@ def inception_model(load_weights=True):
 
 def inception_resnet_model(load_weights=True):
     base_model = InceptionResNetV2(include_top=False, weights='imagenet', input_tensor=None,
-                                   input_shape=(image_width, image_height, 3), pooling='avg')
+                                   input_shape=(image_height, image_width, 3), pooling='avg') # change from input_shape=(image_width, image_height,3)
     x = base_model.output
     x = Dense(1024, activation='relu')(x)
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(classes, activation='softmax')(x)
+    x = Dense(num_classes, activation='softmax')(x)     # change from x = Dense(classes, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model.name = 'inception_resnet'
     return modela
@@ -227,7 +232,7 @@ def compile_n_fit(validation_percent, testing_percent, load_wt, image_width=175,
         print('No weights defined!')
     #         pass
 
-    model.compile(loss="categorical_crossentropy", optimizer=Adam(lr=0.0001), metrics=['accuracy'])
+    model.compile(loss="categorical_crossentropy", optimizer=Adam(learning_rate=0.0001), metrics=['accuracy'])
     early_stopping = EarlyStopping(patience=10, verbose=2)
     model_checkpoint = ModelCheckpoint(model_name + "_combine" + ".model", save_best_only=True, verbose=2)
     reduce_lr = ReduceLROnPlateau(factor=0.1, patience=5, verbose=2)  # min_lr=0.00001,
@@ -249,7 +254,7 @@ def compile_n_fit(validation_percent, testing_percent, load_wt, image_width=175,
     print("\nThe test accuracy for " + model_name + " with magnification " + magnification + " is ", test_acc, "\n")
 
 
-model_num = 0
+model_num = 1
 name = models[model_num].__name__
 print("name: " + name)
 iteration = 0
