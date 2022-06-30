@@ -1,0 +1,386 @@
+name: resnet50_model
+./BreakHist_Dataset/40X
+ 40X 1
+1 0 0 1
+./BreakHist_Dataset/40X/Malignant/ductal_carcinoma
+ductal_carcinoma 40X 864
+606 129 129 864
+./BreakHist_Dataset/40X/Malignant/lobular_carcinoma
+lobular_carcinoma 40X 156
+110 23 23 156
+./BreakHist_Dataset/40X/Benign
+ 40X 1
+1 0 0 1
+./BreakHist_Dataset/40X/Benign/adenosis
+adenosis 40X 114
+80 17 17 114
+./BreakHist_Dataset/40X/Benign/fibroadenoma
+fibroadenoma 40X 253
+179 37 37 253
+971 206 206
+Metal device set to: Apple M1
+
+systemMemory: 16.00 GB
+maxCacheSize: 5.33 GB
+
+2022-06-29 17:13:32.103486: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:305] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2022-06-29 17:13:32.103913: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:271] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+A local file was found, but it seems to be incomplete or outdated because the auto file hash does not match the original value of 4d473c1dd8becc155b73f8504c6f6626 so we will re-download the data.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/resnet/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5
+94773248/94765736 [==============================] - 8s 0us/step
+No weights defined!
+2022-06-29 17:13:41.975242: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-06-29 17:13:41.975496: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+2022-06-29 17:13:43.348584: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+2022-06-29 17:14:22.149267: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+
+Epoch 00001: val_loss improved from inf to 1.46535, saving model to resnet50_model_combine.model
+2022-06-29 17:14:27.712791: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00002: val_loss did not improve from 1.46535
+
+Epoch 00003: val_loss improved from 1.46535 to 1.15376, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00004: val_loss did not improve from 1.15376
+
+Epoch 00005: val_loss did not improve from 1.15376
+
+Epoch 00006: val_loss did not improve from 1.15376
+
+Epoch 00007: val_loss did not improve from 1.15376
+
+Epoch 00008: val_loss did not improve from 1.15376
+
+Epoch 00008: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-06.
+
+Epoch 00009: val_loss did not improve from 1.15376
+
+Epoch 00010: val_loss did not improve from 1.15376
+
+Epoch 00011: val_loss did not improve from 1.15376
+
+Epoch 00012: val_loss did not improve from 1.15376
+
+Epoch 00013: val_loss did not improve from 1.15376
+
+Epoch 00013: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-07.
+Epoch 00013: early stopping
+7/7 [==============================] - 2s 295ms/step - loss: 2.2937 - accuracy: 0.6262
+
+The test accuracy for resnet50_model with magnification 40X is  0.6262136101722717
+
+./BreakHist_Dataset/100X
+ 100X 1
+1 0 0 1
+./BreakHist_Dataset/100X/Malignant
+ 100X 1
+1 0 0 1
+./BreakHist_Dataset/100X/Malignant/ductal_carcinoma
+ductal_carcinoma 100X 904
+634 135 135 904
+./BreakHist_Dataset/100X/Malignant/lobular_carcinoma
+lobular_carcinoma 100X 170
+120 25 25 170
+./BreakHist_Dataset/100X/Benign
+ 100X 1
+1 0 0 1
+./BreakHist_Dataset/100X/Benign/adenosis
+adenosis 100X 113
+81 16 16 113
+./BreakHist_Dataset/100X/Benign/fibroadenoma
+fibroadenoma 100X 260
+182 39 39 260
+1012 215 215
+Weights loaded!
+2022-06-29 17:21:31.769801: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+2022-06-29 17:22:11.817300: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+
+Epoch 00001: val_loss improved from inf to 2.04755, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00002: val_loss did not improve from 2.04755
+
+Epoch 00003: val_loss did not improve from 2.04755
+
+Epoch 00004: val_loss did not improve from 2.04755
+
+Epoch 00005: val_loss did not improve from 2.04755
+
+Epoch 00006: val_loss did not improve from 2.04755
+
+Epoch 00006: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-06.
+
+Epoch 00007: val_loss did not improve from 2.04755
+
+Epoch 00008: val_loss did not improve from 2.04755
+
+Epoch 00009: val_loss did not improve from 2.04755
+
+Epoch 00010: val_loss improved from 2.04755 to 2.01325, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00011: val_loss improved from 2.01325 to 1.99891, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00012: val_loss improved from 1.99891 to 1.96874, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00013: val_loss improved from 1.96874 to 1.86802, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00014: val_loss improved from 1.86802 to 1.72626, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00015: val_loss improved from 1.72626 to 1.55966, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00016: val_loss improved from 1.55966 to 1.42592, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00017: val_loss improved from 1.42592 to 1.31876, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00018: val_loss improved from 1.31876 to 1.26701, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00019: val_loss improved from 1.26701 to 1.16464, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00020: val_loss improved from 1.16464 to 1.01856, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00021: val_loss improved from 1.01856 to 0.89312, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00022: val_loss improved from 0.89312 to 0.79159, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00023: val_loss improved from 0.79159 to 0.72308, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00024: val_loss improved from 0.72308 to 0.62179, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00025: val_loss improved from 0.62179 to 0.54332, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00026: val_loss improved from 0.54332 to 0.49297, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00027: val_loss improved from 0.49297 to 0.45072, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00028: val_loss improved from 0.45072 to 0.42753, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00029: val_loss improved from 0.42753 to 0.41817, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00030: val_loss improved from 0.41817 to 0.40779, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00031: val_loss improved from 0.40779 to 0.40305, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00032: val_loss improved from 0.40305 to 0.39883, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00033: val_loss improved from 0.39883 to 0.38954, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00034: val_loss improved from 0.38954 to 0.38586, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00035: val_loss did not improve from 0.38586
+
+Epoch 00036: val_loss did not improve from 0.38586
+
+Epoch 00037: val_loss did not improve from 0.38586
+
+Epoch 00038: val_loss did not improve from 0.38586
+
+Epoch 00039: val_loss did not improve from 0.38586
+
+Epoch 00039: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-07.
+
+Epoch 00040: val_loss did not improve from 0.38586
+
+Epoch 00041: val_loss did not improve from 0.38586
+
+Epoch 00042: val_loss did not improve from 0.38586
+
+Epoch 00043: val_loss did not improve from 0.38586
+
+Epoch 00044: val_loss did not improve from 0.38586
+
+Epoch 00044: ReduceLROnPlateau reducing learning rate to 9.999999974752428e-08.
+Epoch 00044: early stopping
+7/7 [==============================] - 1s 162ms/step - loss: 0.3172 - accuracy: 0.9395
+
+The test accuracy for resnet50_model with magnification 100X is  0.9395349025726318
+
+./BreakHist_Dataset/200X/Malignant/ductal_carcinoma
+ductal_carcinoma 200X 896
+628 134 134 896
+./BreakHist_Dataset/200X/Malignant/lobular_carcinoma
+lobular_carcinoma 200X 163
+115 24 24 163
+./BreakHist_Dataset/200X/Benign/adenosis
+adenosis 200X 111
+79 16 16 111
+./BreakHist_Dataset/200X/Benign/fibroadenoma
+fibroadenoma 200X 243
+171 36 36 243
+989 210 210
+Weights loaded!
+2022-06-29 17:50:14.437714: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+2022-06-29 17:50:40.076434: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+
+Epoch 00001: val_loss improved from inf to 0.74625, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00002: val_loss improved from 0.74625 to 0.71637, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00003: val_loss did not improve from 0.71637
+
+Epoch 00004: val_loss did not improve from 0.71637
+
+Epoch 00005: val_loss improved from 0.71637 to 0.35935, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00006: val_loss improved from 0.35935 to 0.32953, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00007: val_loss did not improve from 0.32953
+
+
+Epoch 00008: val_loss did not improve from 0.32953
+
+Epoch 00009: val_loss did not improve from 0.32953
+
+Epoch 00010: val_loss did not improve from 0.32953
+
+Epoch 00011: val_loss did not improve from 0.32953
+
+Epoch 00011: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-06.
+
+Epoch 00012: val_loss did not improve from 0.32953
+
+Epoch 00013: val_loss did not improve from 0.32953
+
+Epoch 00014: val_loss did not improve from 0.32953
+
+Epoch 00015: val_loss did not improve from 0.32953
+
+Epoch 00016: val_loss did not improve from 0.32953
+
+Epoch 00016: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-07.
+Epoch 00016: early stopping
+7/7 [==============================] - 1s 155ms/step - loss: 0.5805 - accuracy: 0.8810
+
+The test accuracy for resnet50_model with magnification 200X is  0.8809524178504944
+
+./BreakHist_Dataset/400X
+ 400X 1
+1 0 0 1
+./BreakHist_Dataset/400X/Malignant
+ 400X 1
+1 0 0 1
+./BreakHist_Dataset/400X/Malignant/ductal_carcinoma
+ductal_carcinoma 400X 788
+552 118 118 788
+./BreakHist_Dataset/400X/Malignant/lobular_carcinoma
+lobular_carcinoma 400X 137
+97 20 20 137
+./BreakHist_Dataset/400X/Benign
+ 400X 1
+1 0 0 1
+./BreakHist_Dataset/400X/Benign/adenosis
+adenosis 400X 106
+76 15 15 106
+./BreakHist_Dataset/400X/Benign/fibroadenoma
+fibroadenoma 400X 204
+144 30 30 204
+865 183 183
+Weights loaded!
+2022-06-29 17:59:20.734438: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+2022-06-29 17:59:54.446496: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+
+Epoch 00001: val_loss improved from inf to 0.97027, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00002: val_loss improved from 0.97027 to 0.77183, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00003: val_loss improved from 0.77183 to 0.56113, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00004: val_loss improved from 0.56113 to 0.52795, saving model to resnet50_model_combine.model
+/Users/rebeccaliu/miniforge3/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/keras/utils/generic_utils.py:494: CustomMaskWarning: Custom mask layers require a config and must override get_config. When loading, the custom mask layer must be passed to the custom_objects argument.
+  warnings.warn('Custom mask layers require a config and must override '
+
+Epoch 00005: val_loss did not improve from 0.52795
+
+Epoch 00006: val_loss did not improve from 0.52795
+
+Epoch 00007: val_loss did not improve from 0.52795
+
+Epoch 00008: val_loss did not improve from 0.52795
+
+Epoch 00009: val_loss did not improve from 0.52795
+
+Epoch 00009: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-06.
+
+Epoch 00010: val_loss did not improve from 0.52795
+
+Epoch 00011: val_loss did not improve from 0.52795
+
+Epoch 00012: val_loss did not improve from 0.52795
+
+Epoch 00013: val_loss did not improve from 0.52795
+
+Epoch 00014: val_loss did not improve from 0.52795
+
+Epoch 00014: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-07.
+Epoch 00014: early stopping
+6/6 [==============================] - 2s 291ms/step - loss: 0.5169 - accuracy: 0.8962
+
+The test accuracy for resnet50_model with magnification 400X is  0.8961748480796814
