@@ -210,7 +210,7 @@ def inception_resnet_model(load_weights=True):
     x = Dense(num_classes, activation='softmax')(x)     # change from x = Dense(classes, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model._name = 'inception_resnet'
-    return modela
+    return model
 
 
 models = [vgg16_model, vgg19_model, xception_model, resnet50_model, inception_model, inception_resnet_model]
@@ -254,7 +254,7 @@ def compile_n_fit(validation_percent, testing_percent, load_wt, image_width=175,
     print("\nThe test accuracy for " + model_name + " with magnification " + magnification + " is ", test_acc, "\n")
 
 
-model_num = 3
+model_num = 5
 name = models[model_num].__name__
 print("name: " + name)
 iteration = 0
