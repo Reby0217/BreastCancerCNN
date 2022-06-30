@@ -70,8 +70,8 @@ def data_split(magnification='40X', validation_percent=0.15, testing_percent=0.1
             for names in filenames:
                 total_images += 1
             print(name, magnification, total_images)
-            validation_size = np.int(total_images * validation_percent)
-            testing_size = np.int(total_images * testing_percent)
+            validation_size = int(total_images * validation_percent)
+            testing_size = int(total_images * testing_percent)
             training_size = total_images - (validation_size + testing_size)
             print(training_size, validation_size, testing_size, total_images)
             num = 0
@@ -80,7 +80,7 @@ def data_split(magnification='40X', validation_percent=0.15, testing_percent=0.1
                 num += 1
                 if not names.startswith('.'):
                     filepath = os.path.join(root, names)
-                    print(filepath)
+                    # print(filepath)
                 else:
                     continue
                 image = mpimg.imread(filepath)
@@ -125,15 +125,15 @@ dropout = 0.35
 
 def xception_model(load_weights=True):
     base_model = Xception(include_top=False, weights='imagenet', input_tensor=None,
-                          input_shape=(image_width, image_height, 3), pooling='max')
+                          input_shape=(image_height, image_width, 3), pooling='max') # change from input_shape=(image_width, image_height,3)
     x = base_model.output
     x = Dense(1024, activation='relu')(x)
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(num_classes, activation='softmax')(x)
+    x = Dense(num_classes, activation='softmax')(x) # change from x = Dense(classes, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
-    model.name = 'xception'
+    model._name = 'xception_model'
 
     return model
 
@@ -146,7 +146,7 @@ def vgg16_model(load_weights=True):
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(num_classes, activation='softmax')(x)
+    x = Dense(4, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model._name = 'vgg16'
 
@@ -165,7 +165,7 @@ def vgg19_model(load_weights=True):
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(num_classes, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
+    x = Dense(4, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
     model._name = 'vgg19'
     return model
@@ -179,9 +179,9 @@ def resnet50_model(load_weights=True):
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(num_classes, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
+    x = Dense(4, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
-    model.name = 'resnet'
+    model._name = 'resnet'
     return model
 
 
@@ -193,9 +193,9 @@ def inception_model(load_weights=True):
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
     x = Dense(16, activation='relu')(x)
-    x = Dense(num_classes, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
+    x = Dense(4, activation='softmax')(x)   # change from Dense(8, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
-    model.name = 'inception'
+    model._name = 'inception'
     return model
 
 
@@ -209,7 +209,7 @@ def inception_resnet_model(load_weights=True):
     x = Dense(16, activation='relu')(x)
     x = Dense(num_classes, activation='softmax')(x)     # change from x = Dense(classes, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=x)
-    model.name = 'inception_resnet'
+    model._name = 'inception_resnet'
     return modela
 
 
@@ -254,7 +254,7 @@ def compile_n_fit(validation_percent, testing_percent, load_wt, image_width=175,
     print("\nThe test accuracy for " + model_name + " with magnification " + magnification + " is ", test_acc, "\n")
 
 
-model_num = 1
+model_num = 2
 name = models[model_num].__name__
 print("name: " + name)
 iteration = 0
