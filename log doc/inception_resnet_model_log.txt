@@ -1,0 +1,262 @@
+name: inception_resnet_model
+./BreakHist_Dataset/40X
+ 40X 1
+1 0 0 1
+./BreakHist_Dataset/40X/Malignant/ductal_carcinoma
+ductal_carcinoma 40X 864
+606 129 129 864
+./BreakHist_Dataset/40X/Malignant/lobular_carcinoma
+lobular_carcinoma 40X 156
+110 23 23 156
+./BreakHist_Dataset/40X/Benign
+ 40X 1
+1 0 0 1
+./BreakHist_Dataset/40X/Benign/adenosis
+adenosis 40X 114
+80 17 17 114
+./BreakHist_Dataset/40X/Benign/fibroadenoma
+fibroadenoma 40X 253
+179 37 37 253
+971 206 206
+Metal device set to: Apple M1
+
+systemMemory: 16.00 GB
+maxCacheSize: 5.33 GB
+
+2022-06-29 18:23:56.803766: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:305] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2022-06-29 18:23:56.803905: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:271] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+No weights defined!
+2022-06-29 18:24:00.616225: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-06-29 18:24:00.616485: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+2022-06-29 18:24:04.875332: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+2022-06-29 18:25:14.353466: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+
+Epoch 00001: val_loss improved from inf to 1.14511, saving model to inception_resnet_model_combine.model
+2022-06-29 18:25:36.171906: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+
+Epoch 00002: val_loss improved from 1.14511 to 1.11323, saving model to inception_resnet_model_combine.model
+
+Epoch 00003: val_loss did not improve from 1.11323
+
+Epoch 00004: val_loss did not improve from 1.11323
+
+Epoch 00005: val_loss did not improve from 1.11323
+
+Epoch 00006: val_loss did not improve from 1.11323
+
+Epoch 00007: val_loss improved from 1.11323 to 1.02178, saving model to inception_resnet_model_combine.model
+
+Epoch 00008: val_loss improved from 1.02178 to 0.88841, saving model to inception_resnet_model_combine.model
+
+Epoch 00009: val_loss improved from 0.88841 to 0.86413, saving model to inception_resnet_model_combine.model
+
+Epoch 00010: val_loss did not improve from 0.86413
+
+Epoch 00011: val_loss improved from 0.86413 to 0.67293, saving model to inception_resnet_model_combine.model
+
+Epoch 00012: val_loss did not improve from 0.67293
+
+Epoch 00013: val_loss did not improve from 0.67293
+
+Epoch 00014: val_loss did not improve from 0.67293
+
+Epoch 00015: val_loss improved from 0.67293 to 0.48638, saving model to inception_resnet_model_combine.model
+
+Epoch 00016: val_loss did not improve from 0.48638
+
+Epoch 00017: val_loss did not improve from 0.48638
+
+Epoch 00018: val_loss did not improve from 0.48638
+
+Epoch 00019: val_loss did not improve from 0.48638
+
+Epoch 00020: val_loss did not improve from 0.48638
+
+Epoch 00020: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-06.
+
+Epoch 00021: val_loss did not improve from 0.48638
+
+Epoch 00022: val_loss did not improve from 0.48638
+
+Epoch 00023: val_loss did not improve from 0.48638
+
+Epoch 00024: val_loss did not improve from 0.48638
+
+Epoch 00025: val_loss did not improve from 0.48638
+
+Epoch 00025: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-07.
+Epoch 00025: early stopping
+7/7 [==============================] - 3s 434ms/step - loss: 0.8837 - accuracy: 0.8689
+
+The test accuracy for inception_resnet_model with magnification 40X is  0.8689320683479309
+
+./BreakHist_Dataset/100X
+ 100X 1
+1 0 0 1
+./BreakHist_Dataset/100X/Malignant
+ 100X 1
+1 0 0 1
+./BreakHist_Dataset/100X/Malignant/ductal_carcinoma
+ductal_carcinoma 100X 904
+634 135 135 904
+./BreakHist_Dataset/100X/Malignant/lobular_carcinoma
+lobular_carcinoma 100X 170
+120 25 25 170
+./BreakHist_Dataset/100X/Benign
+ 100X 1
+1 0 0 1
+./BreakHist_Dataset/100X/Benign/adenosis
+adenosis 100X 113
+81 16 16 113
+./BreakHist_Dataset/100X/Benign/fibroadenoma
+fibroadenoma 100X 260
+182 39 39 260
+1012 215 215
+Weights loaded!
+2022-06-29 18:52:34.843469: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+2022-06-29 18:53:48.341619: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+
+Epoch 00001: val_loss improved from inf to 0.87933, saving model to inception_resnet_model_combine.model
+
+Epoch 00002: val_loss improved from 0.87933 to 0.59370, saving model to inception_resnet_model_combine.model
+
+Epoch 00003: val_loss improved from 0.59370 to 0.47659, saving model to inception_resnet_model_combine.model
+
+Epoch 00004: val_loss improved from 0.47659 to 0.40329, saving model to inception_resnet_model_combine.model
+
+Epoch 00005: val_loss improved from 0.40329 to 0.32340, saving model to inception_resnet_model_combine.model
+
+Epoch 00006: val_loss did not improve from 0.32340
+
+Epoch 00007: val_loss did not improve from 0.32340
+
+Epoch 00008: val_loss did not improve from 0.32340
+
+Epoch 00009: val_loss did not improve from 0.32340
+
+Epoch 00010: val_loss did not improve from 0.32340
+
+Epoch 00010: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-06.
+
+Epoch 00011: val_loss did not improve from 0.32340
+
+Epoch 00012: val_loss did not improve from 0.32340
+
+Epoch 00013: val_loss did not improve from 0.32340
+
+Epoch 00014: val_loss did not improve from 0.32340
+
+Epoch 00015: val_loss did not improve from 0.32340
+
+Epoch 00015: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-07.
+Epoch 00015: early stopping
+7/7 [==============================] - 2s 214ms/step - loss: 0.3593 - accuracy: 0.9070
+
+The test accuracy for inception_resnet_model with magnification 100X is  0.9069767594337463
+
+./BreakHist_Dataset/200X/Malignant/ductal_carcinoma
+ductal_carcinoma 200X 896
+628 134 134 896
+./BreakHist_Dataset/200X/Malignant/lobular_carcinoma
+lobular_carcinoma 200X 163
+115 24 24 163
+./BreakHist_Dataset/200X/Benign/adenosis
+adenosis 200X 111
+79 16 16 111
+./BreakHist_Dataset/200X/Benign/fibroadenoma
+fibroadenoma 200X 243
+171 36 36 243
+989 210 210
+Weights loaded!
+2022-06-29 19:04:17.348797: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+2022-06-29 19:05:01.338080: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+
+Epoch 00001: val_loss improved from inf to 0.56031, saving model to inception_resnet_model_combine.model
+
+Epoch 00002: val_loss improved from 0.56031 to 0.44169, saving model to inception_resnet_model_combine.model
+
+Epoch 00003: val_loss did not improve from 0.44169
+
+Epoch 00004: val_loss did not improve from 0.44169
+
+Epoch 00005: val_loss did not improve from 0.44169
+
+Epoch 00006: val_loss did not improve from 0.44169
+
+Epoch 00007: val_loss did not improve from 0.44169
+
+Epoch 00007: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-06.
+
+Epoch 00008: val_loss did not improve from 0.44169
+
+Epoch 00009: val_loss did not improve from 0.44169
+
+Epoch 00010: val_loss did not improve from 0.44169
+
+Epoch 00011: val_loss did not improve from 0.44169
+
+Epoch 00012: val_loss did not improve from 0.44169
+
+Epoch 00012: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-07.
+Epoch 00012: early stopping
+7/7 [==============================] - 2s 207ms/step - loss: 0.5063 - accuracy: 0.9143
+
+The test accuracy for inception_resnet_model with magnification 200X is  0.9142857789993286
+
+./BreakHist_Dataset/400X
+ 400X 1
+1 0 0 1
+./BreakHist_Dataset/400X/Malignant
+ 400X 1
+1 0 0 1
+./BreakHist_Dataset/400X/Malignant/ductal_carcinoma
+ductal_carcinoma 400X 788
+552 118 118 788
+./BreakHist_Dataset/400X/Malignant/lobular_carcinoma
+lobular_carcinoma 400X 137
+97 20 20 137
+./BreakHist_Dataset/400X/Benign
+ 400X 1
+1 0 0 1
+./BreakHist_Dataset/400X/Benign/adenosis
+adenosis 400X 106
+76 15 15 106
+./BreakHist_Dataset/400X/Benign/fibroadenoma
+fibroadenoma 400X 204
+144 30 30 204
+865 183 183
+Weights loaded!
+2022-06-29 19:11:33.865572: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+2022-06-29 19:12:22.446977: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+
+Epoch 00001: val_loss improved from inf to 0.80634, saving model to inception_resnet_model_combine.model
+
+Epoch 00002: val_loss improved from 0.80634 to 0.41060, saving model to inception_resnet_model_combine.model
+
+Epoch 00003: val_loss did not improve from 0.41060
+
+Epoch 00004: val_loss did not improve from 0.41060
+
+Epoch 00005: val_loss did not improve from 0.41060
+
+Epoch 00006: val_loss did not improve from 0.41060
+
+Epoch 00007: val_loss did not improve from 0.41060
+
+Epoch 00007: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-06.
+
+Epoch 00008: val_loss did not improve from 0.41060
+
+Epoch 00009: val_loss did not improve from 0.41060
+
+Epoch 00010: val_loss did not improve from 0.41060
+
+Epoch 00011: val_loss did not improve from 0.41060
+
+Epoch 00012: val_loss did not improve from 0.41060
+
+Epoch 00012: ReduceLROnPlateau reducing learning rate to 9.999999747378752e-07.
+Epoch 00012: early stopping
+6/6 [==============================] - 1s 218ms/step - loss: 0.4409 - accuracy: 0.8743
+
+The test accuracy for inception_resnet_model with magnification 400X is  0.874316930770874
